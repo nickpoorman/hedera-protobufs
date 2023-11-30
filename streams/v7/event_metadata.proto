@@ -1,0 +1,85 @@
+syntax = "proto3";
+
+package proto;
+
+/*-
+ * ‌
+ * Hedera Network Services Protobuf
+ * ​
+ * Copyright (C) 2018 - 2023 Hedera Hashgraph, LLC
+ * ​
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * ‍
+ */
+
+option java_package = "com.hedera.services.stream.proto";
+// <<<pbj.java_package = "com.hedera.hapi.streams">>> This comment is special code for setting PBJ Compiler java package
+option java_multiple_files = true;
+
+import "basic_types.proto";
+import "event_descriptor.proto";
+import "signature_file.proto";
+import "timestamp.proto";
+
+/**
+ Event for when serialized on wire, reuses EventMetadata
+ Note: Not used in block stream
+*/
+//message Event {
+//  EventMetadata metadata = 1;
+//  repeated Transaction transactions = 2;
+//}
+
+// TODO: Still digging through Round to make sure we have all the fields we need
+// from ConsensusEvent and BaseEventHashedData.
+message EventMetadata {
+  /**
+   * The software version of the node that created this event.
+   */
+  SemanticVersion software_version = 1;
+
+  /**
+   * ID of this event's creator (translated before sending).
+   */
+  int64 creator_id = 2;
+
+  /**
+   * The generation of this event.
+   */
+  int64 gen = 3;
+
+  /**
+   * The roster id of the roster that should be used to valida.
+   */
+  int64 roster_id = 4;
+
+  /**
+   * ID of this event's creator (translated before sending).
+   */
+  EventDescriptor self_parent = 5;
+
+  /**
+   * The generation for the self parent.
+   */
+  repeated EventDescriptor other_parents = 6;
+
+  /**
+   * Creation time, as claimed by its creator.
+   */
+  Timestamp time_created = 7;
+
+  /**
+   * Signature
+   */
+  SignatureObject signature = 8;
+}

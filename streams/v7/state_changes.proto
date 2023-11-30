@@ -1,0 +1,117 @@
+syntax = "proto3";
+
+package proto;
+
+/*-
+ * ‌
+ * Hedera Network Services Protobuf
+ * ​
+ * Copyright (C) 2018 - 2023 Hedera Hashgraph, LLC
+ * ​
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * ‍
+ */
+
+option java_package = "com.hedera.services.stream.proto";
+// <<<pbj.java_package = "com.hedera.hapi.streams">>> This comment is special code for setting PBJ Compiler java package
+option java_multiple_files = true;
+
+import "account.proto";
+import "basic_types.proto";
+import "block_info.proto";
+import "bytecode.proto";
+import "common.proto";
+import "congestion_level_starts.proto";
+import "file.proto";
+import "network_staking_rewards.proto";
+import "nft.proto";
+import "primitives.proto";
+import "running_hashes.proto";
+import "schedule.proto";
+import "staking_node_info.proto";
+import "storage_slot.proto";
+import "throttle_usage_snapshots.proto";
+import "timestamp.proto";
+import "token.proto";
+import "token_relation.proto";
+import "topic.proto";
+
+message StateChanges {
+  /**
+   * The consensus timestamp of the transaction.
+   */
+  Timestamp consensus_timestamp = 1;
+
+  /**
+   * Each type of transaction has specific state changes.
+   */
+  repeated StateChange state_change = 2;
+}
+
+message StateChange {
+  /**
+   * path to change
+   */
+  uint64 merkle_tree_path = 1;
+
+  /**
+   * Type of change
+   */
+  StateChangeType change_type = 2;
+
+  oneof key {
+    EntityNumber entity_number = 3;
+    EntityIDPair entity_id_pair = 4;
+    TopicID topic_id = 5;
+    SlotKey slot_key = 6;
+    ScheduleID schedule_id = 7;
+    ProtoLong proto_long = 8;
+    ProtoString proto_string = 9;
+  }
+
+  oneof new_value {
+    Account account = 10;
+    Nft nft = 11;
+    Token token = 12;
+    TokenRelation token_relation = 13;
+    Topic topic = 14;
+    SlotValue slot_value = 15;
+    Bytecode bytecode = 16;
+    File file = 17;
+    Schedule scehdule = 18;
+    ScheduleList schedule_list = 19;
+    BlockInfo block_info = 20;
+    RunningHashes running_hashes = 21;
+    CongestionLevelStarts congestion_level_starts = 22;
+    ThrottleUsageSnapshots throttle_usage_snapshots = 23;
+    NetworkStakingRewards network_staking_rewards = 24;
+    StakingNodeInfo staking_node_info = 25;
+  }
+}
+
+enum StateChangeType {
+  /**
+   *
+   */
+  DELETION = 0;
+
+  /**
+   *
+   */
+  INSERTION = 1;
+
+  /**
+   *
+   */
+  UPDATE = 1;
+}
