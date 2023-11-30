@@ -113,5 +113,5 @@ enum StateChangeType {
   /**
    *
    */
-  UPDATE = 1;
+  UPDATE = 2;
 }
