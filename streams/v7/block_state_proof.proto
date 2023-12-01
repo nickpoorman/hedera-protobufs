@@ -26,9 +26,9 @@ option java_package = "com.hedera.services.stream.v7.proto";
 // <<<pbj.java_package = "com.hedera.hapi.streams.v7">>> This comment is special code for setting PBJ Compiler java package
 option java_multiple_files = true;
 
-import "block_signature.proto";
 import "running_hashes.proto";
-import "sibling_hashes.proto";
+import "streams/v7/block_signature.proto";
+import "streams/v7/sibling_hashes.proto";
 
 /**
  * Compute the SHA384 hash of RunningHashes, then take that and the sibling

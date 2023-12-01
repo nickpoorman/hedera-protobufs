@@ -27,8 +27,8 @@ option java_package = "com.hedera.services.stream.v7.proto";
 option java_multiple_files = true;
 
 import "basic_types.proto";
-import "event_descriptor.proto";
 import "signature_file.proto";
+import "streams/v7/event_descriptor.proto";
 import "timestamp.proto";
 
 /**
