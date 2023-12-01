@@ -28,8 +28,8 @@ option java_multiple_files = true;
 
 import "basic_types.proto";
 import "signature_file.proto";
-import "streams/v7/event_descriptor.proto";
 import "timestamp.proto";
+import "v7/event_descriptor.proto";
 
 /**
  Event for when serialized on wire, reuses EventMetadata

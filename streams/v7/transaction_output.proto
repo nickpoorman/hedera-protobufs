@@ -26,14 +26,14 @@ option java_package = "com.hedera.services.stream.v7.proto";
 // <<<pbj.java_package = "com.hedera.hapi.streams.v7">>> This comment is special code for setting PBJ Compiler java package
 option java_multiple_files = true;
 
-import "streams/v7/consensus_service_output.proto";
-import "streams/v7/crypto_service_output.proto";
-import "streams/v7/file_service_output.proto";
-import "streams/v7/misc_output.proto";
-import "streams/v7/schedule_service_output.proto";
-import "streams/v7/smart_contract_service_output.proto";
-import "streams/v7/token_service_output.proto";
-import "streams/v7/util_service_output.proto";
+import "v7/consensus_service_output.proto";
+import "v7/crypto_service_output.proto";
+import "v7/file_service_output.proto";
+import "v7/misc_output.proto";
+import "v7/schedule_service_output.proto";
+import "v7/smart_contract_service_output.proto";
+import "v7/token_service_output.proto";
+import "v7/util_service_output.proto";
 
 message TransactionOutput {
   /**
