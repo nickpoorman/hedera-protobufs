@@ -26,25 +26,25 @@ option java_package = "com.hedera.services.stream.v7.proto";
 // <<<pbj.java_package = "com.hedera.hapi.streams.v7">>> This comment is special code for setting PBJ Compiler java package
 option java_multiple_files = true;
 
-import "account.proto";
 import "basic_types.proto";
-import "block_info.proto";
-import "bytecode.proto";
-import "common.proto";
-import "congestion_level_starts.proto";
-import "file.proto";
-import "network_staking_rewards.proto";
-import "nft.proto";
-import "primitives.proto";
-import "running_hashes.proto";
-import "schedule.proto";
-import "staking_node_info.proto";
-import "storage_slot.proto";
-import "throttle_usage_snapshots.proto";
+import "state/blockrecords/block_info.proto";
+import "state/blockrecords/running_hashes.proto";
+import "state/common.proto";
+import "state/congestion/congestion_level_starts.proto";
+import "state/consensus/topic.proto";
+import "state/contract/bytecode.proto";
+import "state/contract/storage_slot.proto";
+import "state/file/file.proto";
+import "state/primitives.proto";
+import "state/schedule/schedule.proto";
+import "state/throttles/throttle_usage_snapshots.proto";
+import "state/token/account.proto";
+import "state/token/network_staking_rewards.proto";
+import "state/token/nft.proto";
+import "state/token/staking_node_info.proto";
+import "state/token/token.proto";
+import "state/token/token_relation.proto";
 import "timestamp.proto";
-import "token.proto";
-import "token_relation.proto";
-import "topic.proto";
 
 message StateChanges {
   /**
