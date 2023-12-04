@@ -35,17 +35,17 @@ message TokenCreateOutput {
   TokenID token_id = 1;
 }
 
-message TokenFreezeAccountOutput {}
+//message TokenFreezeAccountOutput {}
 
-message TokenUnfreezeAccountOutput {}
+//message TokenUnfreezeAccountOutput {}
 
-message TokenGrantKycOutput {}
+//message TokenGrantKycOutput {}
 
-message TokenRevokeKycOutput {}
+//message TokenRevokeKycOutput {}
 
-message TokenDeleteOutput {}
+//message TokenDeleteOutput {}
 
-message TokenUpdateOutput {}
+//message TokenUpdateOutput {}
 
 message TokenMintOutput {
   oneof token_type {
@@ -115,12 +115,12 @@ message TokenWipeAccountNonFungibleUniqueOutput {
   uint64 new_total_issued = 1;
 }
 
-message TokenAssociateOutput {}
+//message TokenAssociateOutput {}
 
-message TokenDissociateOutput {}
+//message TokenDissociateOutput {}
 
-message TokenFeeScheduleUpdateOutput {}
+//message TokenFeeScheduleUpdateOutput {}
 
-message TokenPauseOutput {}
+//message TokenPauseOutput {}
 
-message TokenUnpauseOutput {}
+//message TokenUnpauseOutput {}

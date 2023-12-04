@@ -28,7 +28,7 @@ option java_multiple_files = true;
 
 import "basic_types.proto";
 
-message FileAppendOutput {}
+//message FileAppendOutput {}
 
 message FileCreateOutput {
   /**
@@ -37,6 +37,6 @@ message FileCreateOutput {
   FileID file_id = 1;
 }
 
-message FileDeleteOutput {}
+//message FileDeleteOutput {}
 
-message FileUpdateOutput {}
+//message FileUpdateOutput {}

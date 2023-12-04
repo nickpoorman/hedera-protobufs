@@ -48,7 +48,7 @@ message ScheduleCreateOutput {
   ScheduleID schedule_ref = 3;
 }
 
-message ScheduleDeleteOutput {}
+//message ScheduleDeleteOutput {}
 
 message ScheduleSignOutput {
   /**

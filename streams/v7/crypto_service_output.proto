@@ -29,11 +29,11 @@ option java_multiple_files = true;
 import "basic_types.proto";
 import "custom_fees.proto";
 
-message CryptoAddLiveHashOutput {}
+//message CryptoAddLiveHashOutput {}
 
-message CryptoApproveAllowanceOutput {}
+//message CryptoApproveAllowanceOutput {}
 
-message CryptoDeleteAllowanceOutput {}
+//message CryptoDeleteAllowanceOutput {}
 
 message CryptoCreateOutput {
   /**
@@ -49,9 +49,9 @@ message CryptoCreateOutput {
   bytes evm_address = 2;
 }
 
-message CryptoDeleteOutput {}
+//message CryptoDeleteOutput {}
 
-message CryptoDeleteLiveHashOutput {}
+//message CryptoDeleteLiveHashOutput {}
 
 message CryptoTransferOutput {
   /**
@@ -61,4 +61,4 @@ message CryptoTransferOutput {
   repeated AssessedCustomFee assessed_custom_fees = 1;
 }
 
-message CryptoUpdateOutput {}
+//message CryptoUpdateOutput {}

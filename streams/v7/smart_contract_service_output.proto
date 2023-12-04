@@ -76,11 +76,11 @@ message ContractCreateOutput {
 
 // no evm exec, only modified entity
 // TODO: remove
-message ContractUpdateOutput {}
+//message ContractUpdateOutput {}
 
 // no evm exec, only modified entity
 // TODO: remove
-message ContractDeleteOutput {}
+//message ContractDeleteOutput {}
 
 /**
  * An Ethereum encoded transaction output.

@@ -35,9 +35,9 @@ message ConsensusCreateTopicOutput {
   TopicID topic_id = 1;
 }
 
-message ConsensusUpdateTopicOutput {}
+//message ConsensusUpdateTopicOutput {}
 
-message ConsensusDeleteTopicOutput {}
+//message ConsensusDeleteTopicOutput {}
 
 message ConsensusSubmitMessageOutput {
   /**
@@ -109,4 +109,4 @@ message ConsensusSubmitMessageOutput {
   uint64 topic_running_hash_version = 3;
 }
 
-message UncheckedSubmitOutput {}
+//message UncheckedSubmitOutput {}
